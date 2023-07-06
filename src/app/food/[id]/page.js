@@ -1,11 +1,14 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import Navbar from "@/components/Navbar/Navbar";
 
-const FoodDetails = () => {
-  const params = useParams();
-
-  return <div>FoodDetails {params.id} </div>;
+const FoodDetails = ({ params }) => {
+  return (
+    <>
+      <Navbar />
+      <div>FoodDetails {params.id} </div>
+    </>
+  );
 };
 
 export default FoodDetails;

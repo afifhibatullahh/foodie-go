@@ -5,14 +5,14 @@ import datas from "./data";
 export const Footer = () => {
   return (
     <div>
-      <h2 className="p-5 text-4xl font-bold text-slate-800">
-        Recommendation for you 🍕🍕
+      <h2 className="p-5 mt-20 text-4xl font-bold text-slate-800">
+        Recommendation for you 👩‍🍳👩‍🍳
       </h2>
-      <div className="mb-32 grid gap-1 grid-cols-1 lg:mb-0 md:grid-cols-2 lg:grid-cols-4 text-left">
+      <div className="mb-32 grid gap-1 grid-cols-1 lg:mb-0 sm:grid-cols-2 lg:grid-cols-4 text-left">
         {datas.results.map((data) => {
           return (
             <a
-              href={`/details/${data.item.id}`}
+              href={`/food/${data.item.id}`}
               className="group rounded-lg border md:max-w-xs  border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
               // target="_blank"
               rel="noopener noreferrer"
