@@ -4,7 +4,6 @@ import React from "react";
 function Suggestion({ suggestion }) {
   const router = useRouter();
 
-  console.log("suffe", suggestion);
   return (
     <ul class="bg-white border border-gray-100 w-full mt-2 rounded-3xl overflow-hidden">
       {suggestion.map((s) => {

@@ -20,10 +20,8 @@ const Banner = () => {
   const fetchFoodResults = async (inputVal) => {
     try {
       if (inputVal !== "") {
-        console.log(inputVal);
         const { data } = await GET_AUTO_COMPLETE(`?prefix=${inputVal}`);
         setResults(data?.results.slice(0, 8) ?? []);
-        console.log(data);
       } else {
         setResults([]);
       }
