@@ -1,19 +1,19 @@
 const { default: GET_API } = require(".");
 
 const GET_AUTO_COMPLETE = async (params) => {
-  return await GET_API(`auto-complete${params}`);
+  return await GET_API(`recipes/auto-complete${params}`);
 };
 
 const GET_LIST = async (params) => {
-  return await GET_API(`list${params}`);
+  return await GET_API(`recipes/list${params}`);
 };
 
 const GET_LIST_SIMILARITITES = async (params) => {
-  return await GET_API(`list-similarities${params}`);
+  return await GET_API(`recipes/list-similarities${params}`);
 };
 
 const GET_MORE_INFO = async (params) => {
-  return await GET_API(`get-more-info${params}`);
+  return await GET_API(`recipes/get-more-info${params}`);
 };
 
 const GET_LIST_TIPS = async (params) => {

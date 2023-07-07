@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://tasty.p.rapidapi.com/recipes/",
+  baseURL: "https://tasty.p.rapidapi.com/",
 });
 
 const GET_API = async (url) => {

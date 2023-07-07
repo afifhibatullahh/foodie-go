@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-grow justify-between flex-col">
+      <div className="flex flex-grow w-full justify-between flex-col">
         <Banner />
         <Footer />
       </div>
