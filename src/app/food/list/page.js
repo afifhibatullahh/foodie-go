@@ -7,14 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export async function generateMetadata({ searchParams }) {
-  if (searchParams.q) {
-    return {
-      title: `${searchParams.q} - Foodie`,
-    };
-  }
-}
-
 const ListFoods = ({ searchParams }) => {
   const router = useRouter();
   const key_search = searchParams.q;
