@@ -24,9 +24,10 @@ export const Footer = () => {
       </h2>
       <div className="mb-32 grid gap-1  grid-cols-1 lg:mb-0 sm:grid-cols-2 lg:grid-cols-4 text-left">
         {isSuccess ? (
-          datas?.results?.map((data) => {
+          datas?.results?.map((data, i) => {
             return (
               <a
+                key={i}
                 href={`/food/${data.item?.id}`}
                 className="group rounded-lg border md:max-w-xs  border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 // target="_blank"

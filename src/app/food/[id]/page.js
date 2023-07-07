@@ -38,6 +38,7 @@ const FoodDetails = ({ params }) => {
           ) : (
             <Image
               src={more_info.thumbnail_url}
+              alt={more_info.thumbnail_alt_text}
               width={1000}
               quality={90}
               loading="lazy"
@@ -61,9 +62,12 @@ const FoodDetails = ({ params }) => {
                 {more_info.name}
               </h1>
               <div className="pt-4 pb-2">
-                {more_info.tags.slice(0, 5).map((tag) => {
+                {more_info.tags.slice(0, 5).map((tag, i) => {
                   return (
-                    <span className="inline-block sm:text-xs md:text-sm bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    <span
+                      key={i}
+                      className="inline-block sm:text-xs md:text-sm bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    >
                       #{tag.display_name}
                     </span>
                   );
@@ -77,6 +81,7 @@ const FoodDetails = ({ params }) => {
                     const stop_color2 = 100 - stop_color1;
                     return (
                       <Star
+                        key={i}
                         id={i}
                         stop_color1={stop_color1}
                         stop_color2={stop_color2}
@@ -94,9 +99,12 @@ const FoodDetails = ({ params }) => {
               <span className="text-sm title-font text-gray-500 tracking-widest mr-1">
                 By
               </span>
-              {more_info.credits.map((credit) => {
+              {more_info.credits.map((credit, i) => {
                 return (
-                  <span className="text-sm title-font text-gray-500 tracking-widest">
+                  <span
+                    key={i}
+                    className="text-sm title-font text-gray-500 tracking-widest"
+                  >
                     {credit.name} |{" "}
                   </span>
                 );
@@ -117,7 +125,7 @@ const FoodDetails = ({ params }) => {
               Object.entries(more_info.nutrition).map((nutrition, key) => {
                 if (nutrition[0] == "updated_at") return;
                 return (
-                  <ul class="list-none">
+                  <ul class="list-none" key={key}>
                     <li>
                       {nutrition[1]} {nutrition[0]}
                     </li>
@@ -133,9 +141,9 @@ const FoodDetails = ({ params }) => {
               Instruction
             </h2>
             {isSuccess &&
-              more_info.instructions.map((instruction) => {
+              more_info.instructions.map((instruction, i) => {
                 return (
-                  <div className="flex items-center">
+                  <div className="flex items-center" key={i}>
                     <span className="font-bold text-5xl text-sky-800 m-2">
                       {instruction.position}
                     </span>

@@ -6,9 +6,10 @@ function Suggestion({ suggestion }) {
 
   return (
     <ul class="bg-white border border-gray-100 w-full mt-2 rounded-3xl overflow-hidden">
-      {suggestion.map((s) => {
+      {suggestion.map((s, i) => {
         return (
           <li
+            key={i}
             onClick={() => router.push(`/food/list?q=${s.search_value}`)}
             class="pl-8 pr-2 py-1 border-b-2 border-gray-100 relative cursor-pointer hover:bg-sky-50 hover:text-gray-900"
           >
